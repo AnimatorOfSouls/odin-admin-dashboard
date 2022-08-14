@@ -8,15 +8,17 @@
 :root {
   --main-color: rgb(35, 144, 207);
   --accent-color: rgb(230, 176, 0);
-  --background-color: rgb(231, 231, 231);
+  --background-color: rgb(230, 233, 235);
+  --shadow-color: rgb(184, 184, 184);
+  --card-shadow: 3px 3px 5px var(--shadow-color);
 }
 
 .container {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) 3fr 1fr;
+  grid-template-columns: minmax(220px, 1fr) 2fr 1fr;
   grid-template-rows: auto 1fr 1fr;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .sidebar {
@@ -63,7 +65,7 @@
 
 .navbar {
   grid-column: 2 / -1;
-  box-shadow: 0 4px 4px rgb(184, 184, 184);
+  box-shadow: 0 4px 4px var(--shadow-color);
   position: relative;
   z-index: 1;
   display: grid;
@@ -142,12 +144,44 @@
   border-radius: 15px;
 }
 
+.projects,
+.announcements {
+  padding-top: 35px;
+}
+
+.announcements,
+.trending {
+  padding: 25px 25px 20px 5px;
+}
+
 .projects {
   background-color: var(--background-color);
   grid-row: 2 / -1;
 }
 
-.announcements,
+.announcements {
+  background-color: var(--background-color);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.announcements .messages {
+  background-color: white;
+  border-radius: 14px;
+  padding: 30px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr auto);
+  box-shadow: var(--card-shadow);
+}
+
+.announcements .heading {
+  font-weight: 600;
+}
+
+.announcements .messages hr {
+  margin: 10px 0;
+}
+
 .trending {
   background-color: var(--background-color);
 }
