@@ -224,6 +224,8 @@
 
 .trending {
   background-color: var(--background-color);
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .trending .trending-card {
@@ -233,6 +235,7 @@
   display: grid;
   gap: 18px;
   box-shadow: var(--card-shadow);
+  grid-template-rows: repeat(3, auto) 1fr;
 }
 
 .trending .profile {
